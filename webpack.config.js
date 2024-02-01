@@ -17,6 +17,10 @@ module.exports = {
     modules: [__dirname, "src", "node_modules"],
     extensions: ["*", ".js", ".jsx", ".tsx", ".ts"],
   },
+  devtool: 'eval-source-map',
+  devServer: {
+    port: 3000
+  },
   module: {
     rules: [
       {
