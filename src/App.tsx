@@ -1,11 +1,17 @@
 import React from 'react';
-import MultiSelectAutocomplete from './components/MultiSelectAutoComplete';
-import s from './assets/styles/style.module.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import NotFound from './components/NotFound';
 
-const App = () => (
-  <div className={s.homepage}>
-    <MultiSelectAutocomplete />
-  </div>
-);
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default App;
