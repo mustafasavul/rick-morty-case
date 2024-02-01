@@ -1,8 +1,10 @@
-import React from "react";
+import React from 'react';
+import MultiSelectAutocomplete from './components/MultiSelectAutoComplete';
+import s from './assets/styles/style.module.css';
 
 const App = () => (
-  <div>
-    <h1>Hello, Rick</h1>
+  <div className={s.homepage}>
+    <MultiSelectAutocomplete />
   </div>
 );
 

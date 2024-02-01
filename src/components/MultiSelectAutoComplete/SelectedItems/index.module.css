@@ -1,0 +1,32 @@
+.selectedItems {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.selectedItem {
+  background-color: #e3e8f1;
+  color: #334255;
+  padding: 6px 10px;
+  border-radius: 3px;
+  margin: 2px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.removeItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #94a4b8;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+}

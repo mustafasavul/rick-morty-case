@@ -1,0 +1,20 @@
+.multiSelectContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .multiSelectContainer {
+    max-width: 100%;
+  }
+}
+
+.input {
+  max-width: 379px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
