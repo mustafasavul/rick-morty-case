@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDebounce } from 'use-debounce';
 import { fetchData } from '../apiConfig';
 import { Character } from 'src/components/MultiSelectAutoComplete/interface';
+import toast from 'react-hot-toast';
 
 export const useCharacterSearch = (searchQuery: string) => {
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -22,8 +23,8 @@ export const useCharacterSearch = (searchQuery: string) => {
           setIsLoading(false);
         })
         .catch((err) => {
-          console.error(err);
-          setError('An error occurred while fetching the data.');
+          setError(err?.message);
+          toast.error(err?.message);
           setIsLoading(false);
         });
     } else {

@@ -9,7 +9,7 @@ export const MultiSelectAutocomplete = () => {
   const [inputValue, setInputValue] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const { characters, isLoading, error } = useCharacterSearch(inputValue);
+  const { characters, isLoading } = useCharacterSearch(inputValue);
   const { selectedCharacters, handleSelectCharacter, handleRemoveCharacter } =
     useCharacterSelection();
 
@@ -51,8 +51,6 @@ export const MultiSelectAutocomplete = () => {
 
       {isLoading ? (
         <div>Loading...</div>
-      ) : error ? (
-        <div>{error}</div>
       ) : (
         isDropdownOpen && (
           <DropdownMenu
