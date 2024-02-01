@@ -128,3 +128,14 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+.idea/modules.xml
+.idea/rick-morty-case.iml
+.idea/vcs.xml
+.idea/inspectionProfiles/Project_Default.xml
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
