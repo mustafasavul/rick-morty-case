@@ -8,13 +8,13 @@
 
 @media screen and (max-width: 768px) {
   .multiSelectContainer {
+    width: 80%;
     max-width: 100%;
   }
 }
 
 .input {
-  max-width: 400px;
-  width: 100%;
+  width: calc(110% - 20px);
   padding: 10px;
   margin-bottom: 5px;
   border: 1px solid #ccc;
