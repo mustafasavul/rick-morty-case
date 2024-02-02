@@ -17,7 +17,6 @@ This is a case study project for Rick and Morty, showcasing the usage of various
 - <img src="https://img.shields.io/badge/TypeScript-%5E5.3.3-blue" alt="TypeScript" /> [TypeScript](https://www.typescriptlang.org/)
 - <img src="https://img.shields.io/badge/React-%5E18.2.0-blue" alt="React" /> [React](https://reactjs.org/)
 - <img src="https://img.shields.io/badge/Webpack-%5E5.90.0-blue" alt="Webpack" /> [Webpack](https://webpack.js.org/)
-- <img src="https://img.shields.io/badge/ESLint-%5E8.56.0-orange" alt="ESLint" /> [ESLint](https://eslint.org/)
 - <img src="https://img.shields.io/badge/React%20Router%20DOM-%5E6.22.0-blue" alt="React Router DOM" /> [React Router DOM](https://reactrouter.com/)
 
 ## Installation
