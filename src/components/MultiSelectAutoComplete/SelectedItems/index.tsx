@@ -16,26 +16,31 @@ const SelectedItems: React.FC<SelectedItemsProps> = ({
   const toggleExpand = () => setIsExpanded(!isExpanded);
 
   return (
-    <div className={s.selectedItems}>
-      {selectedCharacters
-        .slice(0, isExpanded ? selectedCharacters.length : 5)
-        .map((character) => (
-          <span key={character.id} className={s.selectedItem}>
+      <div>
+        <div className={s.selectedItemsCount}>
+          Selected Characters: <mark>{selectedCharacters.length}</mark>
+        </div>
+        <div className={s.selectedItems}>
+          {selectedCharacters
+              .slice(0, isExpanded ? selectedCharacters.length : 5)
+              .map((character) => (
+                  <span key={character.id} className={s.selectedItem}>
             {character.name}
-            <button
-              className={s.removeItem}
-              onClick={() => onRemoveCharacter(character.id)}
-            >
+                    <button
+                        className={s.removeItem}
+                        onClick={() => onRemoveCharacter(character.id)}
+                    >
               ×
             </button>
           </span>
-        ))}
-      {selectedCharacters.length > 5 && (
-        <button onClick={toggleExpand} className={s.toggleExpandBtn}>
-          {isExpanded ? 'View Less' : 'View More'}
-        </button>
-      )}
-    </div>
+              ))}
+          {selectedCharacters.length > 5 && (
+              <button onClick={toggleExpand} className={s.toggleExpandBtn}>
+                {isExpanded ? 'View Less' : 'View More'}
+              </button>
+          )}
+        </div>
+      </div>
   );
 };
 

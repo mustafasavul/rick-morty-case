@@ -1,13 +1,15 @@
 import React from 'react';
 import s from './assets/styles/style.module.css';
-import MultiSelectAutocomplete from './components/MultiSelectAutoComplete';
-import { Toaster } from 'react-hot-toast';
+import {Toaster} from 'react-hot-toast';
+import {MultiSelectAutocomplete} from "./components";
 
 const Home = () => (
-  <div className={s.homepage}>
-    <MultiSelectAutocomplete />
-    <Toaster position="bottom-right" />
-  </div>
+    <div className={s.container}>
+      <div className={s.homepage}>
+        <MultiSelectAutocomplete/>
+        <Toaster position="bottom-right"/>
+      </div>
+    </div>
 );
 
 export default Home;

@@ -1,13 +1,13 @@
 .dropdown {
-  position: absolute;
-  width: 100%;
-  max-width: 400px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-top: none;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  max-height: 318px;
-  overflow-y: auto;
-  z-index: 1000;
-} 
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid #ccc;
+    width: calc(110% - 20px);
+    max-height: 318px;
+    overflow-y: auto;
+    position: absolute;
+    left: 0;
+    z-index: 1000;
+}
+

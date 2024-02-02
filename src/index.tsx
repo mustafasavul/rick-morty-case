@@ -1,9 +1,9 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import {createRoot} from 'react-dom/client';
 import App from './App';
 import './assets/styles/style.module.css';
-import { ErrorBoundary } from 'react-error-boundary';
-import NotFound from './components/NotFound';
+import {ErrorBoundary} from 'react-error-boundary';
+import {NotFound} from "./components";
 
 const rootElement = document.querySelector('#root');
 if (!rootElement) throw new Error('Failed to find the root element');
@@ -15,9 +15,9 @@ function logErrorToService(error: any, info: any) {
 }
 
 root.render(
-  <React.StrictMode>
-    <ErrorBoundary FallbackComponent={NotFound} onError={logErrorToService}>
-      <App />
-    </ErrorBoundary>
-  </React.StrictMode>
+    <React.StrictMode>
+      <ErrorBoundary FallbackComponent={NotFound} onError={logErrorToService}>
+        <App/>
+      </ErrorBoundary>
+    </React.StrictMode>
 );

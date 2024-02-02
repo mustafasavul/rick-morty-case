@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import s from './index.module.css';
 import { Character } from '../interface';
 
@@ -20,6 +20,33 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
   highlightQuery,
 }) => {
   const itemRef = useRef<HTMLDivElement>(null);
+  const [isImageVisible, setImageVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          setImageVisible(entry.isIntersecting);
+        },
+        {
+          root: null, // viewport gözlemleyici olarak kullanılır
+          rootMargin: '0px',
+          threshold: 0.1, // %10 görüldüğünde tetiklenir
+        }
+    );
+
+    if (itemRef.current) {
+      observer.observe(itemRef.current);
+    }
+
+    return () => {
+      if (itemRef.current) {
+        observer.unobserve(itemRef.current);
+      }
+    };
+  }, []);
+
+
 
   useEffect(() => {
     if (isFocused && itemRef.current) {
@@ -27,34 +54,42 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
     }
   }, [isFocused]);
 
+  const handleClick = (e) => {
+    // Checkbox'a doğrudan tıklanmadığında işlemi yap
+    if (e.target.type !== 'checkbox') {
+      if (isSelected) {
+        onRemoveCharacter(dropdownItem.id);
+      } else {
+        onSelectCharacter(dropdownItem);
+      }
+    }
+  };
+
   return (
     <div
       ref={itemRef}
       tabIndex={0}
-      className={`${s.dropdownItems} ${isSelected ? s.selected : ''}`}
-      onClick={() => onSelectCharacter(dropdownItem)}
+      className={`${s.dropdownItems} ${isSelected ? s.selected : ''} ${isFocused ? s.focused : ''}`}
+      onClick={handleClick}
+      role="button"
+      aria-pressed={isSelected}
     >
       <div className={s.dropdownItemsInner}>
         <input
           type="checkbox"
           className={s.selectCheckbox}
           checked={isSelected}
-          onChange={(e) => {
-            e.stopPropagation();
-            if (isSelected) {
-              onRemoveCharacter(dropdownItem.id);
-            } else {
-              onSelectCharacter(dropdownItem);
-            }
-          }}
-          onClick={(e) => e.stopPropagation()}
+          onChange={() => {}} // Checkbox'ın varsayılan davranışını boş bir fonksiyon ile geçersiz kıl
+          onClick={(e) => e.stopPropagation()} // Checkbox tıklamasının üst elemente yayılmasını önle
         />
 
-        <img
-          src={dropdownItem.image}
-          alt={dropdownItem.name}
-          className={s.dropdownItemsImage}
-        />
+        {isImageVisible && (
+            <img
+                src={dropdownItem.image}
+                alt={dropdownItem.name}
+                className={s.dropdownItemsImage}
+            />
+        )}
 
         <div className={s.dropdownItemInfoWrapper}>
           <p
