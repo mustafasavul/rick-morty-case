@@ -56,7 +56,7 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
           className={s.dropdownItemsImage}
         />
 
-        <div>
+        <div className={s.dropdownItemInfoWrapper}>
           <p
             dangerouslySetInnerHTML={{
               __html: highlightQuery(dropdownItem.name),

@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.dropdownItemInfoWrapper {
+  text-align: left;
+}
+
 .dropdownItems:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
