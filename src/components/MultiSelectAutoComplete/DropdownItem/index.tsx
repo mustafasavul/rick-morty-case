@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import s from './index.module.css';
 import { Character } from '../interface';
 
@@ -24,15 +24,15 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-        (entries) => {
-          const [entry] = entries;
-          setImageVisible(entry.isIntersecting);
-        },
-        {
-          root: null, // viewport gözlemleyici olarak kullanılır
-          rootMargin: '0px',
-          threshold: 0.1, // %10 görüldüğünde tetiklenir
-        }
+      (entries) => {
+        const [entry] = entries;
+        setImageVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1,
+      }
     );
 
     if (itemRef.current) {
@@ -46,8 +46,6 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
     };
   }, []);
 
-
-
   useEffect(() => {
     if (isFocused && itemRef.current) {
       itemRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -55,7 +53,6 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
   }, [isFocused]);
 
   const handleClick = (e) => {
-    // Checkbox'a doğrudan tıklanmadığında işlemi yap
     if (e.target.type !== 'checkbox') {
       if (isSelected) {
         onRemoveCharacter(dropdownItem.id);
@@ -69,7 +66,9 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
     <div
       ref={itemRef}
       tabIndex={0}
-      className={`${s.dropdownItems} ${isSelected ? s.selected : ''} ${isFocused ? s.focused : ''}`}
+      className={`${s.dropdownItems} ${isSelected ? s.selected : ''} ${
+        isFocused ? s.focused : ''
+      }`}
       onClick={handleClick}
       role="button"
       aria-pressed={isSelected}
@@ -79,16 +78,16 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
           type="checkbox"
           className={s.selectCheckbox}
           checked={isSelected}
-          onChange={() => {}} // Checkbox'ın varsayılan davranışını boş bir fonksiyon ile geçersiz kıl
-          onClick={(e) => e.stopPropagation()} // Checkbox tıklamasının üst elemente yayılmasını önle
+          onChange={() => {}}
+          onClick={(e) => e.stopPropagation()}
         />
 
         {isImageVisible && (
-            <img
-                src={dropdownItem.image}
-                alt={dropdownItem.name}
-                className={s.dropdownItemsImage}
-            />
+          <img
+            src={dropdownItem.image}
+            alt={dropdownItem.name}
+            className={s.dropdownItemsImage}
+          />
         )}
 
         <div className={s.dropdownItemInfoWrapper}>

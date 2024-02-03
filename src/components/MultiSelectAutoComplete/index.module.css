@@ -13,6 +13,13 @@
   }
 }
 
+.multiSelectContainerLoader {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .input {
   width: calc(110% - 20px);
   padding: 10px;

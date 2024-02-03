@@ -3,6 +3,7 @@ import DropdownMenu from './DropdownMenu';
 import { useCharacterSearch } from 'src/hooks/useCharacterSearch';
 import { useCharacterSelection } from 'src/hooks/useCharacterSelection';
 import SelectedItems from './SelectedItems';
+import Loader from '../Loader';
 import s from './index.module.css';
 
 export const MultiSelectAutocomplete = () => {
@@ -50,7 +51,9 @@ export const MultiSelectAutocomplete = () => {
       />
 
       {isLoading ? (
-        <div>Loading...</div>
+        <div className={s.multiSelectContainerLoader}>
+          <Loader />
+        </div>
       ) : (
         isDropdownOpen && (
           <DropdownMenu
