@@ -1,10 +1,13 @@
-# Rick and Morty Case Study
+# React Multi Select Component Case Study
 
-[![GitHub license](https://img.shields.io/github/license/mustafasavul/rick-morty-case)](https://github.com/mustafasavul/rick-morty-case/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/mustafasavul/rick-morty-case)](https://github.com/mustafasavul/react-multi-select-component/blob/main/LICENSE)
 
 ## Description
 
-This is a case study project for Rick and Morty, showcasing the usage of various technologies.
+This is a case study project for Rick and Morty using API's,
+It offers simple features such as Multiselect and Keys to move between selections, unselect and add.
+
+As a case, since it was done in limited time, there may be room for improvement. You can fork and make it better and make npm package in your projects.
 
 ## Table of Contents
 
@@ -23,8 +26,8 @@ This is a case study project for Rick and Morty, showcasing the usage of various
 
 ```sh
 # Clone the repository:
-git clone https://github.com/mustafasavul/rick-morty-case.git
-cd rick-morty-case
+git clone https://github.com/mustafasavul/react-multi-select-component
+cd react-multi-select-component
 
 # Install dependencies:
 npm install
