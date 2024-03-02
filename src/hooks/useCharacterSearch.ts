@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDebounce } from 'use-debounce';
 import { fetchData } from '../apiConfig';
-import { Character } from 'src/components/MultiSelectAutoComplete/interface';
+import { Character } from 'src/interface';
 import toast from 'react-hot-toast';
 
 export const useCharacterSearch = (searchQuery: string) => {
